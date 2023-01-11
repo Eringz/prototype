@@ -31,7 +31,7 @@ class Users extends CI_Controller {
 
 		$result = $this->user->login($user_data, $form_data['password']);
 		if($result == "success" ){
-			$this->load->view('main', $result);
+			$this->load->view('main', $user_data);
 		}else{
 			$this->session->set_flashdata('input_errors', $result);
 			$this->load->view('login');
